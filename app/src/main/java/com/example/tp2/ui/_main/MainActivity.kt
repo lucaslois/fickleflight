@@ -26,11 +26,11 @@ class MainActivity : AppCompatActivity() {
         navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         bottomNavView = findViewById(R.id.bottomNav)
 
-        val toolbar = findViewById<MaterialToolbar>(R.id.materialToolbar)
-        setSupportActionBar(toolbar)
+//        val toolbar = findViewById<MaterialToolbar>(R.id.logoToolbar)
+//        setSupportActionBar(toolbar)
+//        NavigationUI.setupWithNavController(toolbar, navHostFragment.navController)
 
         NavigationUI.setupWithNavController(bottomNavView, navHostFragment.navController)
-        NavigationUI.setupWithNavController(toolbar, navHostFragment.navController)
 
         navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
             supportActionBar?.title = destination.label
