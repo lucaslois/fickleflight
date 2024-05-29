@@ -52,6 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="01 hr 40min"
+                android:gravity="end"
                 android:textColor="#7E8B97" />
 
         </LinearLayout>
@@ -67,22 +68,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:padding="4dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/idOrigin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_regular"
                     android:text="EZE"
                     android:textColor="#1262AE"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/txtOrigin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:text="Ezeiza International Airport"
                     android:textColor="#191919" />
 
@@ -93,29 +95,32 @@
                 android:layout_width="48dp"
                 android:layout_height="32dp"
                 android:layout_weight="1"
-                android:background="@android:color/darker_gray"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/flight_with_destination"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
+                android:padding="4dp"
+                android:gravity="end"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/idDestination"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_regular"
                     android:text="IAH"
                     android:textColor="#1262AE"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/txtDestination"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:gravity="end"
                     android:text="George Bush Intercontinental Airport"
                     android:textColor="#191919" />
 
@@ -150,8 +155,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="12dp"
                     android:layout_weight="1"
-                    android:text="From $1128"
-                    android:gravity="end"/>
+                    android:gravity="end"
+                    android:text="From $1128" />
             </LinearLayout>
 
             <Button
