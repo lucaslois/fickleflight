@@ -35,12 +35,5 @@ class MainActivity : AppCompatActivity() {
         navHostFragment.navController.addOnDestinationChangedListener { _, destination, _ ->
             supportActionBar?.title = destination.label
         }
-
-        val flightsService = FlightService()
-
-        CoroutineScope(Dispatchers.IO).launch {
-            val response = flightsService.getFlights()
-            response
-        }
     }
 }
