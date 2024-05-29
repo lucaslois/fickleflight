@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/logoToolbar"
     android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
+    android:layout_height="68dp"
 >
 
     <ImageView
@@ -26,11 +26,12 @@
 
     <ImageView
         android:id="@+id/profileImage"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_gravity="end"
         android:src="@drawable/profile_image"
         android:scaleType="centerCrop"
         android:contentDescription="@string/app_name"
+        android:layout_marginEnd="15dp"
         />
 </com.google.android.material.appbar.MaterialToolbar>
