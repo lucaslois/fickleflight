@@ -2,4 +2,6 @@
     <string name="app_name">tp2</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="paris">Paris</string>
+    <string name="_1299">$1299</string>
 </resources>
