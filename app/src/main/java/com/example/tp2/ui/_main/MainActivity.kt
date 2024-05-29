@@ -1,22 +1,31 @@
 package com.example.tp2.ui._main
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import android.widget.Toolbar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.example.tp2.R
-import com.example.tp2.ui.theme.Tp2Theme
+import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
+    private lateinit var bottomNavView : BottomNavigationView
+    private lateinit var navHostFragment : NavHostFragment
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
+
+        navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        bottomNavView = findViewById(R.id.bottomNav)
+
+        val toolbar = findViewById<MaterialToolbar>(R.id.materialToolbar)
+        setSupportActionBar(toolbar)
+
+        NavigationUI.setupWithNavController(bottomNavView, navHostFragment.navController)
+        NavigationUI.setupWithNavController(toolbar, navHostFragment.navController)
+
     }
 }
