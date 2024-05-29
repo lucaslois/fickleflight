@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.example.tp2.R
 
@@ -21,8 +23,16 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        requireActivity().title = "Home"
-        return inflater.inflate(R.layout.fragment_home, container, false)
+
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+
+        val toolbar = view.findViewById<Toolbar>(R.id.logoToolbar)
+        (activity as? AppCompatActivity)?.setSupportActionBar(toolbar)
+
+        (activity as? AppCompatActivity)?.supportActionBar?.title = ""
+
+        return view
     }
 
     companion object {
