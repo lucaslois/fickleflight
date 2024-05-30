@@ -15,7 +15,7 @@
 
         <include
             android:id="@+id/includeToolbar"
-            layout="@layout/logo_toolbar"
+            layout="@layout/component_logo_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
@@ -24,7 +24,7 @@
 
         <include
             android:id="@+id/includeDestinationCard"
-            layout="@layout/destination_card"
+            layout="@layout/component_destination_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/includeToolbar"
@@ -34,7 +34,7 @@
 
         <include
             android:id="@+id/includeFlightButton"
-            layout="@layout/flight_button"
+            layout="@layout/component_flight_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/includeDestinationCard"
