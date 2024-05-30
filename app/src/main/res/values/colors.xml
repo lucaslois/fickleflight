@@ -16,4 +16,6 @@
     <color name="flight_text">#191919</color>
     <color name="bottom_bar_inactive">#7E8B97</color>
     <color name="orange">#F99A0E</color>
+    <color name="separator">#E6E9F0</color>
+
 </resources>

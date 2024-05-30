@@ -7,7 +7,7 @@
     app:layout_constraintWidth="300dp">
 
     <ImageView
-        android:id="@+id/profile_background"
+        android:id="@+id/profileBackground"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:contentDescription="@string/background"
