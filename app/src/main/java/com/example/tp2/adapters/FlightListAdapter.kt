@@ -23,6 +23,12 @@ class FlightListAdapter(
         val flight = flightList[position]
         holder.setOrigin(flight.flights[0].departure_airport.name)
         holder.setDestination(flight.flights[0].arrival_airport.name)
+        holder.setAirplaneLogo(flight.flights[0].airline_logo)
+        holder.setOriginId(flight.flights[0].departure_airport.id)
+        holder.setDestinationId(flight.flights[0].arrival_airport.id)
+        holder.setDuration(flight.flights[0].duration)
+        holder.setTravelClass(flight.flights[0].travel_class)
+        holder.setFromPrice(flight.price.toString())
     }
 
     fun updateFlights(flights: MutableList<BestFlight>) {

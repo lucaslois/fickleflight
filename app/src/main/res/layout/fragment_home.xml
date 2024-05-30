@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/fragmentHome"
+    android:background="#F8F9FB"
     tools:context=".ui.home.HomeFragment"
     android:layout_marginTop="20dp">
 
@@ -15,7 +15,7 @@
 
         <include
             android:id="@+id/includeToolbar"
-            layout="@layout/logo_toolbar"
+            layout="@layout/component_logo_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
@@ -24,7 +24,7 @@
 
         <include
             android:id="@+id/includeDestinationCard"
-            layout="@layout/destination_card"
+            layout="@layout/component_destination_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/includeToolbar"
@@ -34,7 +34,7 @@
 
         <include
             android:id="@+id/includeFlightButton"
-            layout="@layout/flight_button"
+            layout="@layout/component_flight_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/includeDestinationCard"
@@ -43,6 +43,28 @@
 
             />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_bold"
+                android:text="Trending Destinations"
+                android:textColor="#191919"
+                android:textSize="16dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/trendingDestinationsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

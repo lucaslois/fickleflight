@@ -4,4 +4,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="paris">Paris</string>
     <string name="_1299">$1299</string>
+    <string name="offers">Offers</string>
+    <string name="profile">Profile</string>
+    <string name="search">Search</string>
+    <string name="home">Home</string>
+    <string name="background">background</string>
+    <string name="from">FROM</string>
+    <string name="i_like_the_beach_mountains_forest_and_everything_about_nature">I like the beach, mountains, forest and everything about nature! :)</string>
+    <string name="baguio_philippines">Baguio, Philippines</string>
+    <string name="macy_johnson">Macy Johnson</string>
+    <string name="text_content">Text Content</string>
 </resources>
