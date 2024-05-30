@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/flight_icon_background"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/background_airplane"
+        android:padding="10dp"
+        app:shapeAppearanceOverlay="@style/RoundedCorners" />
+    >
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/flight_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/inter_regular"
+        android:padding="25dp"
+        android:src="@drawable/ic_airplane" />
+
+    <TextView
+        android:id="@+id/flight_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/flight_icon"
+        android:layout_centerHorizontal="true"
+        android:text="Flight"
+        android:textSize="18sp" />
+
+</RelativeLayout>
