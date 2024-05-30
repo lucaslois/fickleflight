@@ -1,4 +1,4 @@
-package com.example.tp2.ui.flighList
+package com.example.tp2.ui.flightList
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,7 +11,6 @@ import com.example.tp2.R
 import com.example.tp2.adapters.FlightListAdapter
 import com.example.tp2.data.network.flights.FlightService
 import com.example.tp2.data.network.flights.models.BestFlight
-import com.example.tp2.data.network.flights.models.Flight
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
