@@ -16,7 +16,7 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        requireActivity().title = "Profile"
+//        requireActivity().title = "Profile"
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 }
