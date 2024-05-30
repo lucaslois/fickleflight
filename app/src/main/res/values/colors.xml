@@ -13,4 +13,6 @@
     <!--    custom colors-->
     <color name="background_airplane">#5443CB</color>
     <color name="flight_text">#191919</color>
+    <color name="bottom_bar_inactive">#7E8B97
+    </color>
 </resources>
