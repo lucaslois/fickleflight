@@ -18,6 +18,36 @@
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineNav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/backButton"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@color/settings_icon_background"
+            android:src="@drawable/ic_back"
+            app:contentPadding="8dp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintTop_toTopOf="@+id/guidelineNav"
+            app:shapeAppearanceOverlay="@style/CircleImage" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/editButton"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@color/settings_icon_background"
+            android:src="@drawable/ic_edit"
+            app:contentPadding="5dp"
+
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintTop_toTopOf="@+id/guidelineNav"
+            app:shapeAppearanceOverlay="@style/CircleImage" />
+
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
