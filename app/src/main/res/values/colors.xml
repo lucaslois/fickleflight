@@ -19,6 +19,24 @@
     <color name="separator">#E6E9F0</color>
     <color name="settings_icon_background">#F1F7FD</color>
     <color name="new_setting">#32D4AD</color>
+    <color name="settings_title">#1B72C0</color>
+    <color name="settings_background">#F8F9FB</color>
+
+    <!--    custom switch colors-->
+
+    <color name="custom_color_switch_thumb_inactive">#74777F</color>
+    <color name="custom_color_switch_thumb_active">#1262AE</color>
+    <color name="custom_color_switch_track_inactive">#EFF1F8</color>
+    <color name="custom_color_switch_track_active">#F1F7FD</color>
+    <color name="custom_color_switch_track_border_inactive">#74777F</color>
+    <color name="custom_color_switch_track_border_active">#1262AE</color>
+
+
+
+
+
+
+
 
 
 </resources>

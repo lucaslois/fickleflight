@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.fragment.findNavController
 import com.example.tp2.R
 
 class ProfileFragment : Fragment() {
@@ -37,8 +38,17 @@ class ProfileFragment : Fragment() {
         settingsView.findViewById<ImageView>(R.id.optionIcon).setImageResource(R.drawable.ic_settings)
         settingsView.findViewById<TextView>(R.id.optionText).text = "Settings"
 
+        settingsView.setOnClickListener {
+            findNavController().navigate(R.id.action_profileFragment_to_settingsFragment)
+        }
+
         val logoutView = view.findViewById<View>(R.id.optionLogout)
         logoutView.findViewById<ImageView>(R.id.optionIcon).setImageResource(R.drawable.ic_logout)
         logoutView.findViewById<TextView>(R.id.optionText).text = "Logout"
+
+        val backButton = view.findViewById<ImageView>(R.id.backButton)
+        backButton.setOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 }
