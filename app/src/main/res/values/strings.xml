@@ -14,4 +14,7 @@
     <string name="baguio_philippines">Baguio, Philippines</string>
     <string name="macy_johnson">Macy Johnson</string>
     <string name="text_content">Text Content</string>
+    <string name="background_image_boracay">background_image_boracay</string>
+    <string name="tittle_boracay">tittle_boracay</string>
+    <string name="country">country</string>
 </resources>

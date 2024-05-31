@@ -6,14 +6,14 @@
     android:layout_height="68dp"
     >
 
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/back_arrow"
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/backButton"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:background="@drawable/back_arrow"
-        android:elevation="8dp"
-        />
+        android:background="@color/settings_icon_background"
+        android:src="@drawable/ic_back"
+
+         />
 
 
 
