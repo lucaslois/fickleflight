@@ -9,7 +9,7 @@ import com.example.tp2.R
 
 
 
-class Details : Fragment() {
+class DetailsFragment : Fragment() {
 
 
 
