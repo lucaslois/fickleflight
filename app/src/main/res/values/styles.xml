@@ -22,4 +22,19 @@
         <item name="cornerSizeBottomLeft">0dp</item>
         <item name="cornerSizeBottomRight">0dp</item>
     </style>
+
+    <style name="CustomSelectedButton">
+        <item name="android:background">@drawable/rounded_button</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:backgroundTint">@color/blue_active</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CustomUnselectedButton">
+        <item name="android:background">@drawable/rounded_button</item>
+        <item name="android:textColor">@color/font_light_grey</item>
+        <item name="android:backgroundTint">@android:color/transparent</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
 </resources>
