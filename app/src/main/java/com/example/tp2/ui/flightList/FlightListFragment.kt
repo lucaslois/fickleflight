@@ -4,7 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tp2.R
@@ -42,4 +45,12 @@ class FlightListFragment : Fragment() {
 
         return view
     }
+
+
+    private fun onViewItemDetail() {
+        val action = FlightListFragmentDirections.actionFlightListFragmentToDetailsFragment()
+        view?.findNavController()?.navigate(action)
+    }
+
+
 }

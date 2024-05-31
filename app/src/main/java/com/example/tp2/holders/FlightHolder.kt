@@ -1,17 +1,23 @@
 package com.example.tp2.holders
 
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.tp2.R
 
 class FlightHolder(v: View) : RecyclerView.ViewHolder(v) {
-    private var view: View
+    private var view: View = v
 
     init {
-        this.view = v
+        // Añadir el OnClickListener para el botón
+        val buttonViewDetails = view.findViewById<Button>(R.id.buttonViewDetails)
+        buttonViewDetails.setOnClickListener {
+            view.findNavController().navigate(R.id.action_flightListFragment_to_detailsFragment)
+        }
     }
 
     fun setOrigin(origin: String) {
