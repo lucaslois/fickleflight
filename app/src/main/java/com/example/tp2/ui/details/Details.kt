@@ -12,6 +12,12 @@ import com.example.tp2.R
 class Details : Fragment() {
 
 
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // aca hay que empezar con el adapter del recycler view
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
