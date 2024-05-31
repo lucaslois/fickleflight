@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Primary Colors -->
-    <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#1262AE</color>
+    <color name="colorPrimary">#001253</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#03DAC5</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
 
     <!-- Custom Colors -->
-    <color name="top_navbar">#FFFFFF</color>
-    <color name="background_home">#F8F9FB</color>
-    <color name="background_airplane">#5443CB</color>
-    <color name="flight_text">#191919</color>
-    <color name="bottom_bar_inactive">#7E8B97</color>
+    <color name="top_navbar">#000000</color>
+    <color name="background_home">#001253</color>
+    <color name="background_airplane">#1B72C0</color>
+    <color name="flight_text">#FFFFFF</color>
+    <color name="bottom_bar_inactive">#FFFFFF</color>
     <color name="orange">#F99A0E</color>
     <color name="separator">#E6E9F0</color>
-    <color name="settings_background">#F8F9FB</color>
+    <color name="settings_background">#000000</color>
     <color name="settings_icon_background">#F1F7FD</color>
     <color name="new_setting">#32D4AD</color>
-    <color name="settings_title">#1B72C0</color>
-    <color name="option_title">#001E2F</color>
+    <color name="settings_title">#91CBFF</color>
+    <color name="option_title">#FFFFFF</color>
 
     <!-- Custom Switch Colors -->
     <color name="custom_color_switch_thumb_inactive">#74777F</color>
@@ -30,7 +30,7 @@
     <color name="custom_color_switch_track_border_active">#1262AE</color>
 
     <!-- Custom Bottom Nav Colors -->
-    <color name="colorSelected">#10579B</color>
-    <color name="colorUnselected">#7E8B97</color>
+    <color name="colorSelected">#03DAC5</color>
+    <color name="colorUnselected">#FFFFFF</color>
 
 </resources>

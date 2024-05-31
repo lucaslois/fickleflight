@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.settings.SettingsFragment" android:background="@color/settings_background">
+    android:background="@color/colorPrimary"
+    tools:context=".ui.settings.SettingsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,9 +21,6 @@
         <include
             android:id="@+id/includeToolbar"
             layout="@layout/component_logo_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
             app:layout_constraintBottom_toTopOf="@id/guidelineNav" />
 
         <androidx.constraintlayout.widget.Guideline
@@ -40,17 +38,15 @@
             app:layout_constraintGuide_percent="0.05" />
 
 
-
         <include
             android:id="@+id/optionDarkMode"
             layout="@layout/component_container_settings"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintTop_toTopOf="@id/guidelineNav2"
-            app:layout_constraintStart_toStartOf="@id/guidelineNav3"
             app:layout_constraintDimensionRatio="1:0.35"
+            app:layout_constraintStart_toStartOf="@id/guidelineNav3"
+            app:layout_constraintTop_toTopOf="@id/guidelineNav2"
             app:layout_constraintWidth_percent="0.9" />
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
