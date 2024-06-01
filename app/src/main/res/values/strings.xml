@@ -16,4 +16,9 @@
     <string name="text_content">Text Content</string>
     <string name="modo_oscuro">Modo Oscuro</string>
     <string name="generales">Generales</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="notification">Notification</string>
+    <string name="help">Get Help</string>
+    <string name="calendar">Calendar</string>
+    <string name="settings">Settings</string>
 </resources>
