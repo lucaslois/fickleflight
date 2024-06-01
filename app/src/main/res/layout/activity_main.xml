@@ -39,8 +39,8 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:menu="@menu/bottom_nav_menu" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
@@ -56,10 +56,13 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_gravity="bottom"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
             android:layout_marginBottom="-40dp"
             android:id="@+id/txt_close_app"
-            android:gravity="center"
-            android:text="@string/sign_out" />
+            android:gravity="center_vertical"
+            android:text="@string/version" />
+
 
     </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>
