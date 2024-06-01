@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fitsSystemWindows="true">
@@ -16,7 +15,7 @@
         android:layout_marginBottom="10dp"
         android:drawablePadding="12dp"
         android:gravity="center_vertical"
-        android:text="Grupo 1"
+        android:text="@string/macy_johnson"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium.Inverse"
         android:textColor="@color/black"
         app:drawableStartCompat="@drawable/avatar"
