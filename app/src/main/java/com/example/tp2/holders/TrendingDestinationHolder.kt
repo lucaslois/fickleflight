@@ -26,7 +26,7 @@ class TrendingDestinationHolder(v: View) : RecyclerView.ViewHolder(v) {
 
     fun setDuration(duration: String) {
         val text = view.findViewById<TextView>(R.id.txtDestinationDuration)
-        "$duration hours".also { text.text = it }
+        text.text = duration
     }
 
     fun imageView(): ImageView {

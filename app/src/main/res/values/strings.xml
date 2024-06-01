@@ -17,4 +17,6 @@
     <string name="background_image_boracay">background_image_boracay</string>
     <string name="tittle_boracay">tittle_boracay</string>
     <string name="country">country</string>
+    <string name="modo_oscuro">Modo Oscuro</string>
+    <string name="generales">Generales</string>
 </resources>
