@@ -5,29 +5,27 @@
     android:id="@+id/fragmentSearchFlight"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.searchFlight.SearchFlightFragment"
-    android:background="@color/background_light_grey">
+    android:background="@color/background_light_grey"
+    android:padding="15dp"
+    tools:context=".ui.searchFlight.SearchFlightFragment">
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:weightSum="1">
+        android:orientation="vertical">
 
         <include
             android:id="@+id/searchFlightsForm"
             layout="@layout/component_search_form"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:orientation="vertical"
-            android:padding="20sp"
+            android:paddingTop="30dp"
             android:weightSum="1">
 
             <TextView
@@ -42,7 +40,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/offersRecyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:paddingTop="14dp" />
         </LinearLayout>
     </LinearLayout>
 
