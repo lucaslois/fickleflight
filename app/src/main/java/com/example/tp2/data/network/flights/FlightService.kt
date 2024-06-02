@@ -41,7 +41,11 @@ class FlightService {
         }
     }
 
-    suspend fun getDetails(): GetDetailsApiResponse {
+    /**
+     * destination Parameter is ignored due to the endpoint is hardcoded.
+     * FlightDetails endpoint should receive a destination id to show the details info for that destination
+     */
+    suspend fun getDetails(destination: String): GetDetailsApiResponse {
         return withContext(Dispatchers.IO) {
             retroFitClientInternal.getDetails().body()!!;
         }

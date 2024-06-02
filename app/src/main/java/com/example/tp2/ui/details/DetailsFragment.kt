@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tp2.R
@@ -19,16 +20,18 @@ import kotlinx.coroutines.launch
 class DetailsFragment : Fragment() {
 
     private lateinit var adapter: ImageDetailAdapter
+    private val args: DetailsFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         adapter = ImageDetailAdapter(mutableListOf())
 
         val flightService = FlightService()
+        val flightId = args.destination
 
         lifecycleScope.launch {
             try {
-                val response = flightService.getDetails()
+                val response = flightService.getDetails(flightId)
 
                 val details = response.data
                 view?.let {

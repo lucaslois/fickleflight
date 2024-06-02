@@ -51,7 +51,11 @@
         android:id="@+id/detailsFragment"
         android:name="com.example.tp2.ui.details.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="destination"
+            app:argType="string" />
+    </fragment>
 
     <fragment
         android:id="@+id/settingsFragment"

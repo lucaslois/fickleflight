@@ -18,13 +18,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class FlightListFragment : Fragment() {
+class FlightListFragment : Fragment(), FlightDetailClickable {
     private val flightsList: MutableList<BestFlight> = mutableListOf()
     private lateinit var adapter: FlightListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        adapter = FlightListAdapter(flightsList)
+        adapter = FlightListAdapter(flightsList, this)
 
         val flightsService = FlightService()
 
@@ -46,9 +46,8 @@ class FlightListFragment : Fragment() {
         return view
     }
 
-
-    private fun onViewItemDetail() {
-        val action = FlightListFragmentDirections.actionFlightListFragmentToDetailsFragment()
+    override fun onClickFlightDetail(flightId: String) {
+        val action = FlightListFragmentDirections.actionFlightListFragmentToDetailsFragment(flightId)
         view?.findNavController()?.navigate(action)
     }
 
