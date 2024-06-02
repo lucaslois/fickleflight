@@ -13,7 +13,7 @@
     <color name="background_airplane">#1B72C0</color>
     <color name="flight_text">#FFFFFF</color>
     <color name="bottom_bar_inactive">#FFFFFF</color>
-    <color name="orange">#F99A0E</color>
+    <color name="buttonPrimary">#F99A0E</color>
     <color name="separator">#E6E9F0</color>
     <color name="settings_background">#000000</color>
     <color name="settings_icon_background">#F1F7FD</color>

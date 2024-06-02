@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.androidApplication) apply false
     alias(libs.plugins.jetbrainsKotlinAndroid) apply false
+    /* SAFE ARGS PARA ENVIO DE PARAMS*/
     alias(libs.plugins.safeargs) apply false
 }
 
