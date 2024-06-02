@@ -8,11 +8,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class FlightService {
     var retroFitClient: FlightApiClient
-    var retroFitClientInternal: TrendingDestinationsApiClient
+    var auxiliarRetroFitClient: AuxiliarApiClient
 
     val BASE_URL_FLIGHTS: String = "https://d9811bf4-5e67-4a8c-bdcf-603cbbfc0275.mock.pstmn.io/"
     val BASE_URL_API_INTERNAL: String = "https://raw.githubusercontent.com/lucaslois/mock/main/"
-    val BASE_URL_OFFERS: String ="https://408a9dba-178e-4ede-8f7d-a403b3421abf.mock.pstmn.io"
 
     init {
         retroFitClient = Retrofit.Builder()
@@ -21,11 +20,11 @@ class FlightService {
             .build()
             .create(FlightApiClient::class.java)
 
-        retroFitClientInternal = Retrofit.Builder()
+        auxiliarRetroFitClient = Retrofit.Builder()
             .baseUrl(BASE_URL_API_INTERNAL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(TrendingDestinationsApiClient::class.java)
+            .create(AuxiliarApiClient::class.java)
     }
 
     suspend fun getFlights(): GetFlightsApiResponse {
@@ -36,7 +35,7 @@ class FlightService {
 
     suspend fun getTrendingDestinations(): GetTrendingDestinationsApiResponse {
         return withContext(Dispatchers.IO) {
-            retroFitClientInternal.getTrendingDestinations().body()!!;
+            auxiliarRetroFitClient.getTrendingDestinations().body()!!;
         }
     }
 
@@ -46,20 +45,13 @@ class FlightService {
      */
     suspend fun getDetails(destination: String): GetDetailsApiResponse {
         return withContext(Dispatchers.IO) {
-            retroFitClientInternal.getDetails().body()!!;
+            auxiliarRetroFitClient.getDetails().body()!!;
         }
     }
 
     suspend fun getActiveOffers(): GetOffersApiResponse {
         return withContext(Dispatchers.IO) {
-            val retroFitBuilder = Retrofit.Builder()
-                .baseUrl(BASE_URL_OFFERS)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-
-            val retrofit = retroFitBuilder.create(OffersApiClient::class.java)
-
-            retrofit.getActiveOffers().body()!!;
+            auxiliarRetroFitClient.getActiveOffers().body()!!
         }
     }
 }

@@ -28,7 +28,6 @@ class SearchFlightFragment : Fragment() {
         super.onCreate(savedInstanceState)
         adapter = OfferListAdapter(requireContext(), mutableListOf())
 
-
         val flightsService = FlightService()
 
         lifecycleScope.launch {
@@ -36,7 +35,7 @@ class SearchFlightFragment : Fragment() {
 //                val response = withContext(Dispatchers.IO) {
 //                    flightsService.getActiveOffers()
 //                }
-//                response.data?.let { data ->
+//                response.data.let { data ->
 //                    withContext(Dispatchers.Main) {
 //                        adapter.updateOffers(data.toMutableList())
 //                    }
