@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
@@ -28,6 +29,7 @@ class DetailsFragment : Fragment() {
 
         val flightService = FlightService()
         val flightId = args.destination
+        view?.findViewById<FrameLayout>(R.id.loader)?.visibility = View.VISIBLE
 
         lifecycleScope.launch {
             try {
@@ -43,6 +45,8 @@ class DetailsFragment : Fragment() {
                 }
 
                 adapter.updateImages(details.images)
+
+                view?.findViewById<FrameLayout>(R.id.loader)?.visibility = View.GONE
             } catch (e: Exception) {
                 // Manejar cualquier excepción aquí
                 Log.e("DetailsFragment", "Error: ${e.message}")
