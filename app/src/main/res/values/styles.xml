@@ -47,4 +47,9 @@
 
     </style>
 
+    <style name="Badge">
+        <item name="android:background">@color/badgeBackground</item>
+        <item name="android:textColor">@color/badgeText</item>
+    </style>
+
 </resources>
