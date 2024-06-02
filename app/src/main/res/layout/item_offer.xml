@@ -44,7 +44,7 @@
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/offerDescription"
+                android:id="@+id/offerType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Limited time offer!"

@@ -4,6 +4,6 @@ import retrofit2.Response
 import retrofit2.http.GET
 
 interface OffersApiClient {
-    @GET("/")
+    @GET("/offers")
     suspend fun getActiveOffers(): Response<GetOffersApiResponse>
 }

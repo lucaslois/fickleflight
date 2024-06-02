@@ -19,9 +19,9 @@ class OfferHolder(v: View) : RecyclerView.ViewHolder(v) {
         text.text = discount
     }
 
-    fun setDescription(origin: String) {
-        val text = view.findViewById<TextView>(R.id.offerDescription)
-        text.text = origin
+    fun setOfferType(offerType: String) {
+        val text = view.findViewById<TextView>(R.id.offerType)
+        text.text = offerType
     }
 
     fun setCardImage(imageUrl: String){
