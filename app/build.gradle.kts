@@ -51,9 +51,7 @@ android {
         }
     }
 
-    viewBinding{
-        enable = true
-    }
+
 
 }
 

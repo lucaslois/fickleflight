@@ -6,41 +6,47 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.tp2.adapters.OfferListAdapter
 import com.example.tp2.data.network.flights.FlightService
-import com.example.tp2.databinding.FragmentOffersBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import com.example.tp2.R
 
 class OffersFragment : Fragment() {
 
     private lateinit var adapter: OfferListAdapter
-    private var _binding: FragmentOffersBinding? = null
-    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         adapter = OfferListAdapter(requireContext(), mutableListOf())
 
-        // Este flightsService se podría cambiar por offers
-        val flightsService = FlightService()
+        val offersDetails = FlightService()
 
         lifecycleScope.launch {
             try {
                 val response = withContext(Dispatchers.IO) {
-                    flightsService.getActiveOffers() // Obtengo las offers para el recycler view
+                    offersDetails.getActiveOffers()
                 }
-                response.data?.let { data ->
-                    withContext(Dispatchers.Main) {
-                        adapter.updateOffers(data.toMutableList())
+                withContext(Dispatchers.Main) {
+                    if (response.data.isNotEmpty()) {
+                        adapter.updateOffers(response.data.toMutableList())
+
+                    } else {
+                        Toast.makeText(requireContext(), "No hay ofertas disponibles", Toast.LENGTH_SHORT).show()
+                        Log.e("OffersFragment", "No offers available")
                     }
                 }
             } catch (e: Exception) {
-                Log.e("OffersFragment", "Error fetching offers: ${e.message}")
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(requireContext(), "Error fetching offers: ${e.message}", Toast.LENGTH_SHORT).show()
+                    Log.e("OffersFragment", "Error fetching offers: ${e.message}")
+                }
             }
         }
     }
@@ -49,17 +55,12 @@ class OffersFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentOffersBinding.inflate(inflater, container, false)
+        val view = inflater.inflate(R.layout.fragment_offers, container, false)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.offersDetailsRecyclerView)
 
-        // Conecto con el recycler view y la vista
-        binding.offersDetailsRecyclerView.adapter = adapter
-        binding.offersDetailsRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        return view
     }
 }
