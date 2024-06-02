@@ -11,7 +11,7 @@ class FlightService {
     var retroFitClientInternal: TrendingDestinationsApiClient
 
     val BASE_URL_FLIGHTS: String = "https://d9811bf4-5e67-4a8c-bdcf-603cbbfc0275.mock.pstmn.io/"
-    val BASE_URL_API_INTERNAL: String = "https://ed84cd0e-2bad-4646-bab3-9658c69065d8.mock.pstmn.io/"
+    val BASE_URL_API_INTERNAL: String = "https://raw.githubusercontent.com/lucaslois/mock/main/"
     val BASE_URL_OFFERS: String ="https://408a9dba-178e-4ede-8f7d-a403b3421abf.mock.pstmn.io"
 
     init {

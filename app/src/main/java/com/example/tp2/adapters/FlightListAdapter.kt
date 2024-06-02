@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.tp2.R
 import com.example.tp2.data.network.flights.models.BestFlight
 import com.example.tp2.data.network.flights.models.Flight
+import com.example.tp2.databinding.ItemFlightBinding
 import com.example.tp2.holders.FlightHolder
 import com.example.tp2.ui.flightList.FlightDetailClickable
 
@@ -15,8 +16,9 @@ class FlightListAdapter(
     private val onFlightDetailClickable: FlightDetailClickable
 ) : RecyclerView.Adapter<FlightHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FlightHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_flight, parent, false)
-        return FlightHolder(view)
+        val inflater = LayoutInflater.from(parent.context)
+        val binding = ItemFlightBinding.inflate(inflater, parent, false)
+        return FlightHolder(binding)
     }
 
     override fun getItemCount(): Int = flightList.size
@@ -31,7 +33,10 @@ class FlightListAdapter(
         holder.setDuration(flight.flights[0].duration)
         holder.setTravelClass(flight.flights[0].travel_class)
         holder.setFromPrice(flight.price.toString())
-        holder.setOnFlightDetailClickable(onFlightDetailClickable, flight.flights[0].arrival_airport.id)
+        holder.setOnFlightDetailClickable(
+            onFlightDetailClickable,
+            flight.flights[0].arrival_airport.id
+        )
     }
 
     fun updateFlights(flights: MutableList<BestFlight>) {

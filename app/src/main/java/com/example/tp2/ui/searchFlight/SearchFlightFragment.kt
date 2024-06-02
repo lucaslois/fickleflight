@@ -33,14 +33,14 @@ class SearchFlightFragment : Fragment() {
 
         lifecycleScope.launch {
             try {
-                val response = withContext(Dispatchers.IO) {
-                    flightsService.getActiveOffers()
-                }
-                response.data?.let { data ->
-                    withContext(Dispatchers.Main) {
-                        adapter.updateOffers(data.toMutableList())
-                    }
-                }
+//                val response = withContext(Dispatchers.IO) {
+//                    flightsService.getActiveOffers()
+//                }
+//                response.data?.let { data ->
+//                    withContext(Dispatchers.Main) {
+//                        adapter.updateOffers(data.toMutableList())
+//                    }
+//                }
             } catch (e: Exception) {
                 Log.e("FlightService", "Error fetching offers: ${e.message}", e)
             }
