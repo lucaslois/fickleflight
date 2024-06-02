@@ -48,7 +48,7 @@ class FlightHolder(v: View) : RecyclerView.ViewHolder(v) {
     }
 
     fun setTravelClass(travClass: String) {
-        val text = view.findViewById<TextView>(R.id.travelClass)
+        val text = view.findViewById<TextView>(R.id.travelClassText)
         text.text = travClass
     }
 

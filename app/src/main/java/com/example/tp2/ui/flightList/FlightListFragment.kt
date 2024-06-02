@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -28,6 +29,7 @@ class FlightListFragment : Fragment() {
         CoroutineScope(Dispatchers.Main).launch {
             val response = flightsService.getFlights()
             adapter.updateFlights(response.best_flights.toMutableList())
+            updateResultsText(adapter.itemCount)
         }
     }
 
@@ -41,5 +43,8 @@ class FlightListFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         return view
+    }
+    private fun updateResultsText(resultsCount: Int) {
+        view?.findViewById<TextView>(R.id.flightResultsTextView)?.text = "$resultsCount results found"
     }
 }
