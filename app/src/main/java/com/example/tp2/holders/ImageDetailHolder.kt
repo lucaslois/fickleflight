@@ -13,9 +13,6 @@ class ImageDetailHolder(v: View) : RecyclerView.ViewHolder(v) {
         this.view = v
     }
 
-
-
-
     fun setImage(imageUrl:String){
         val imageView: ImageView = view.findViewById(R.id.imgDetail)
         Glide.with(view.context)
@@ -23,7 +20,6 @@ class ImageDetailHolder(v: View) : RecyclerView.ViewHolder(v) {
             .fitCenter()
             .into(imageView)
     }
-
     fun imageView(): ImageView {
         return view.findViewById(R.id.imgDetail)
     }

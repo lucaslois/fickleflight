@@ -33,7 +33,6 @@ class HomeFragment : Fragment() {
         super.onCreate(savedInstanceState)
         adapter = TrendingDestinationListAdapter(requireContext(), mutableListOf())
 
-
         val flightsService = FlightService()
 
         lifecycleScope.launch {

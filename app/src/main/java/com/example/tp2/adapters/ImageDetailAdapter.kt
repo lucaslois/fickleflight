@@ -25,14 +25,7 @@ class ImageDetailAdapter (
     override fun onBindViewHolder(holder: ImageDetailHolder, position: Int) {
         val imageDetail = imageList[position]
 
-        val imageView = holder.imageView() // Obtener la referencia al ImageView
-        Glide.with(holder.itemView.context)
-            .load(imageDetail)
-            .fitCenter()
-            .into(imageView)
-
-
-
+        holder.setImage(imageDetail)
     }
 
     fun updateImages(images: List<String>) {

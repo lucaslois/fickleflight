@@ -4,7 +4,3 @@ import com.example.tp2.GetDetailsApiResponse
 import retrofit2.Response
 import retrofit2.http.GET
 
-interface DetailsImage {
-    @GET("boracaydetails")
-    suspend fun getDetails(): Response<GetDetailsApiResponse>
-}

@@ -31,7 +31,7 @@
             android:background="@color/settings_icon_background"
             android:src="@drawable/ic_back"
             app:contentPadding="8dp"
-            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintStart_toStartOf="@+id/guidelineEnd"
             app:layout_constraintTop_toTopOf="@+id/guidelineNav"
             app:shapeAppearanceOverlay="@style/CircleImage" />
 
@@ -48,7 +48,7 @@
             app:shapeAppearanceOverlay="@style/CircleImage" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineStart"
+            android:id="@+id/guidelineEnd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -89,7 +89,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintStart_toStartOf="@id/guidelineEnd"
             app:layout_constraintTop_toBottomOf="@id/guidelineTopInfo"
             app:layout_constraintWidth_percent="0.93" />
 
@@ -107,7 +107,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintStart_toStartOf="@id/guidelineEnd"
             app:layout_constraintTop_toBottomOf="@id/guidelineTop"
             app:layout_constraintWidth_percent="0.25" />
 
@@ -124,7 +124,7 @@
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:background="@color/separator"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintStart_toStartOf="@id/guidelineEnd"
             app:layout_constraintTop_toBottomOf="@id/guidelineDivider"
             app:layout_constraintWidth_percent="0.90" />
 
@@ -133,7 +133,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintStart_toStartOf="@id/guidelineEnd"
             app:layout_constraintTop_toBottomOf="@id/guidelineDivider"
           >
 
