@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    /* SAFE ARGS PARA ENVIO DE PARAMS*/
     id("androidx.navigation.safeargs.kotlin")
 }
 

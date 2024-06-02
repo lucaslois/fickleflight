@@ -1,18 +1,17 @@
 package com.example.tp2.holders
 
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.tp2.R
+import com.example.tp2.ui.flightList.FlightDetailClickable
 
 class FlightHolder(v: View) : RecyclerView.ViewHolder(v) {
-    private var view: View
-
-    init {
-        this.view = v
-    }
+    private var view: View = v
 
     fun setOrigin(origin: String) {
         val text = view.findViewById<TextView>(R.id.txtOrigin)
@@ -55,6 +54,14 @@ class FlightHolder(v: View) : RecyclerView.ViewHolder(v) {
     fun setFromPrice(price: String) {
         val text = view.findViewById<TextView>(R.id.fromPrice)
         "$$price".also { text.text = it }
+    }
+
+    fun setOnFlightDetailClickable(flightDetailClickable: FlightDetailClickable, flightId: String) {
+        val buttonViewDetails = view.findViewById<Button>(R.id.buttonViewDetails)
+        buttonViewDetails.setOnClickListener {
+            flightDetailClickable.onClickFlightDetail(flightId)
+        }
+
     }
     private fun convertMinutesToDuration(minutes: Int): String {
         val hours = minutes / 60

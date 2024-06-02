@@ -4,7 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tp2.R
@@ -15,13 +18,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class FlightListFragment : Fragment() {
+class FlightListFragment : Fragment(), FlightDetailClickable {
     private val flightsList: MutableList<BestFlight> = mutableListOf()
     private lateinit var adapter: FlightListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        adapter = FlightListAdapter(flightsList)
+        adapter = FlightListAdapter(flightsList, this)
 
         val flightsService = FlightService()
 
@@ -42,4 +45,11 @@ class FlightListFragment : Fragment() {
 
         return view
     }
+
+    override fun onClickFlightDetail(flightId: String) {
+        val action = FlightListFragmentDirections.actionFlightListFragmentToDetailsFragment(flightId)
+        view?.findNavController()?.navigate(action)
+    }
+
+
 }
