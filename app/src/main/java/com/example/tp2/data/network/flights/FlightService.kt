@@ -1,6 +1,5 @@
 package com.example.tp2.data.network.flights
 
-import com.example.tp2.GetDetailsApiResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Retrofit

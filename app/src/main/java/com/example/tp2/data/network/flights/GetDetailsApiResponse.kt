@@ -1,4 +1,4 @@
-package com.example.tp2
+package com.example.tp2.data.network.flights
 
 
 import com.example.tp2.data.network.flights.models.Details
