@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -28,7 +29,6 @@ class FlightListFragment : Fragment(), FlightDetailClickable {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         viewModel.getBestFlights()
     }
 
@@ -44,22 +44,27 @@ class FlightListFragment : Fragment(), FlightDetailClickable {
         return bindings.root
     }
 
+    private fun updateResultsText(resultsCount: Int) {
+        view?.findViewById<TextView>(R.id.flightResultsTextView)?.text = "$resultsCount results found"
+    }
+
     override fun onClickFlightDetail(flightId: String) {
         val action =
             FlightListFragmentDirections.actionFlightListFragmentToDetailsFragment(flightId)
         view?.findNavController()?.navigate(action)
     }
 
-    fun setupRecyclerView() {
+    private fun setupRecyclerView() {
         adapter = FlightListAdapter(flightsList, this)
         bindings.flightListRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         bindings.flightListRecyclerView.adapter = adapter
     }
 
-    fun observeBestFlights() {
+    private fun observeBestFlights() {
         viewModel.bestFlights.observe(viewLifecycleOwner) {bestFlights ->
             bestFlights.let {
                 adapter.updateFlights(bestFlights)
+                updateResultsText(adapter.itemCount)
             }
         }
 
@@ -67,5 +72,4 @@ class FlightListFragment : Fragment(), FlightDetailClickable {
             bindings.loader.root.visibility = if(loading) View.VISIBLE else View.GONE
         }
     }
-
 }
