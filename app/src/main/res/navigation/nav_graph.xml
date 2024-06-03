@@ -66,13 +66,13 @@
 
 
     <fragment
-        android:id="@+id/navigation_profile"
+        android:id="@+id/navigationProfile"
         android:name="com.example.tp2.ui.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
-        android:id="@+id/navigation_settings"
+        android:id="@+id/navigationSettings"
         android:name="com.example.tp2.ui.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
