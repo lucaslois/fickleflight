@@ -19,4 +19,12 @@
     <string name="country">country</string>
     <string name="modo_oscuro">Modo Oscuro</string>
     <string name="generales">Generales</string>
+    <string name="version">App version 0.0.1</string>
+    <string name="notification">Notification</string>
+    <string name="help">Get Help</string>
+    <string name="calendar">Calendar</string>
+    <string name="settings">Settings</string>
+    <string name="greeting">Hello</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigationProfile"
+        android:icon="@drawable/ic_nav_profile"
+        android:title="@string/profile" />
+    <item
+        android:id="@+id/navigationNotification"
+        android:icon="@drawable/ic_nav_notification"
+        android:title="@string/notification" />
+    <item
+        android:id="@+id/navigationHelp"
+        android:icon="@drawable/ic_nav_help"
+        android:title="@string/help" />
+    <item
+        android:id="@+id/navigationCalendar"
+        android:icon="@drawable/ic_nav_calendar"
+        android:title="@string/calendar" />
+    <item
+        android:id="@+id/navigationSettings"
+        android:icon="@drawable/ic_nav_settings"
+        android:title="@string/settings" />
+
+</menu>
