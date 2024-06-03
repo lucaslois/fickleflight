@@ -54,13 +54,13 @@ class FlightListFragment : Fragment(), FlightDetailClickable {
         view?.findNavController()?.navigate(action)
     }
 
-    fun setupRecyclerView() {
+    private fun setupRecyclerView() {
         adapter = FlightListAdapter(flightsList, this)
         bindings.flightListRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         bindings.flightListRecyclerView.adapter = adapter
     }
 
-    fun observeBestFlights() {
+    private fun observeBestFlights() {
         viewModel.bestFlights.observe(viewLifecycleOwner) {bestFlights ->
             bestFlights.let {
                 adapter.updateFlights(bestFlights)

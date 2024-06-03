@@ -30,7 +30,7 @@ class FlightHolder(private val binding: ItemFlightBinding) : RecyclerView.ViewHo
         Glide.with(binding.root)
             .load(imageUrl)
             .fitCenter()
-            .into(binding.airplaneImg)
+            .into(binding.airplaneLogo)
     }
 
     fun setTravelClass(travClass: String) {
