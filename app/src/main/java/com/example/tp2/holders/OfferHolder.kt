@@ -1,34 +1,23 @@
 package com.example.tp2.holders
 
-import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.tp2.R
+import com.example.tp2.databinding.ItemOfferBinding
 
-class OfferHolder(v: View) : RecyclerView.ViewHolder(v) {
-    private var view: View
+class OfferHolder(private val binding: ItemOfferBinding) : RecyclerView.ViewHolder(binding.root) {
 
-    init {
-        this.view = v
-    }
-
-    fun setDicount(discount: String) {
-        val text = view.findViewById<TextView>(R.id.offerTitle)
-        text.text = discount
+    fun setDiscount(discount: String) {
+        binding.offerTitle.text = discount
     }
 
     fun setOfferType(offerType: String) {
-        val text = view.findViewById<TextView>(R.id.offerType)
-        text.text = offerType
+        binding.offerType.text = offerType
     }
 
     fun setCardImage(imageUrl: String){
-        val imageView: ImageView = view.findViewById(R.id.cardLogo)
-        Glide.with(view.context)
+        Glide.with(binding.root)
             .load(imageUrl)
             .fitCenter()
-            .into(imageView)
+            .into(binding.cardLogo)
     }
 }

@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tp2.R
 import com.example.tp2.data.network.flights.models.Offer
+import com.example.tp2.databinding.ItemFlightBinding
+import com.example.tp2.databinding.ItemOfferBinding
 import com.example.tp2.holders.OfferHolder
 
 class OfferListAdapter(
@@ -16,14 +18,15 @@ class OfferListAdapter(
 
     override fun onBindViewHolder(holder: OfferHolder, position: Int) {
         val offer = offerList[position]
-        holder.setDicount(offer.discount_desc_short)
+        holder.setDiscount(offer.discount_desc_short)
         holder.setOfferType(offer.offer_type_desc)
         holder.setCardImage(offer.image_url)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OfferHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_offer, parent, false)
-        return OfferHolder(view)
+        val inflater = LayoutInflater.from(parent.context)
+        val binding = ItemOfferBinding.inflate(inflater, parent, false)
+        return OfferHolder(binding)
     }
 
     override fun getItemCount(): Int = offerList.size
