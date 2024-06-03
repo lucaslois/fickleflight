@@ -27,4 +27,9 @@
     <string name="greeting">Hello</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="fragment_tittle">Fragment Title</string>
+    <string name="kebab">kebab icon</string>
+    <string name="depeartureAirportString">EZE</string>
+    <string name="arrivalAirportString">LAX</string>
+    <string name="depeartureDateString">29 July, 2022</string>
 </resources>

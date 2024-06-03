@@ -41,7 +41,10 @@
         android:id="@+id/flightListFragment"
         android:name="com.example.tp2.ui.flightList.FlightListFragment"
         android:label="fragment_flight_list"
-        tools:layout="@layout/fragment_flight_list" >
+        tools:layout="@layout/fragment_flight_list">
+        <action
+            android:id="@+id/action_flightListFragment_to_searchFlightFragment"
+            app:destination="@id/searchFlightFragment" />
         <action
             android:id="@+id/action_flightListFragment_to_detailsFragment"
             app:destination="@id/detailsFragment"
@@ -52,7 +55,7 @@
         android:id="@+id/detailsFragment"
         android:name="com.example.tp2.ui.details.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" >
+        tools:layout="@layout/fragment_details">
         <argument
             android:name="destination"
             app:argType="string" />

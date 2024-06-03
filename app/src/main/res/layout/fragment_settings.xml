@@ -12,25 +12,6 @@
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineNav"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.10" />
-
-        <include
-            android:id="@+id/includeToolbar"
-            layout="@layout/component_logo_toolbar"
-            app:layout_constraintBottom_toTopOf="@id/guidelineNav" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineNav2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.15" />
-
-        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineNav3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,7 +26,7 @@
             android:layout_height="0dp"
             app:layout_constraintDimensionRatio="1:0.35"
             app:layout_constraintStart_toStartOf="@id/guidelineNav3"
-            app:layout_constraintTop_toTopOf="@id/guidelineNav2"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.9" />
 
 

@@ -5,9 +5,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -37,7 +34,7 @@ class HomeFragment : Fragment() {
                 val response = withContext(Dispatchers.IO) {
                     flightsService.getTrendingDestinations()
                 }
-                response.data?.let { data ->
+                response.data.let { data ->
                     withContext(Dispatchers.Main) {
                         adapter.updateTrendingDestinations(data.toMutableList())
                     }
@@ -54,10 +51,10 @@ class HomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val toolbar = view.findViewById<Toolbar>(R.id.logoToolbar)
-        (activity as? AppCompatActivity)?.setSupportActionBar(toolbar)
+        //val toolbar = view.findViewById<Toolbar>(R.id.customTopToolbar)
+        //(activity as? AppCompatActivity)?.setSupportActionBar(toolbar)
 
-        (activity as? AppCompatActivity)?.supportActionBar?.title = ""
+        //(activity as? AppCompatActivity)?.supportActionBar?.title = ""
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.trendingDestinationsRecyclerView)
 
@@ -65,10 +62,10 @@ class HomeFragment : Fragment() {
         recyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
-        val profileButton = view.findViewById<ImageView>(R.id.profile_image)
-        profileButton.setOnClickListener {
-
-        }
+        //val profileButton = view.findViewById<ImageView>(R.id.profile_image)
+        //profileButton.setOnClickListener {
+        //
+        //}
 
         return view
     }

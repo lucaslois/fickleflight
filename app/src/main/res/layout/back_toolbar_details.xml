@@ -12,10 +12,7 @@
         android:layout_height="36dp"
         android:background="@color/settings_icon_background"
         android:src="@drawable/ic_back"
-
          />
-
-
 
     <ImageView
         android:id="@+id/heart"

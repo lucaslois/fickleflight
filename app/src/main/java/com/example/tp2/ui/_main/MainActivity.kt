@@ -1,30 +1,24 @@
 package com.example.tp2.ui._main
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.Toolbar
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.example.tp2.R
-import com.example.tp2.data.network.flights.FlightService
+import com.example.tp2.databinding.ActivityMainBinding
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,6 +28,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var leftNavView: NavigationView
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
+
+    private lateinit var binding: ActivityMainBinding
 
     private val fragmentsNavigation = setOf(
         R.id.homeFragment,
@@ -45,19 +41,21 @@ class MainActivity : AppCompatActivity() {
     )
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-
-        topToolbar = findViewById(R.id.customToolbar)
-        bottomNavView = findViewById(R.id.bottomNav)
-        leftNavView = findViewById(R.id.navigationView)
-        drawerLayout = findViewById(R.id.drawerLayout)
+        bottomNavView = binding.bottomNav
+        leftNavView = binding.navigationView
+        drawerLayout = binding.drawerLayout
+        topToolbar = binding.contentMainInclude.customToolbar
 
         setSupportActionBar(topToolbar)
-        navController = findNavController(R.id.navGraphFragmentActivityMain)
+
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.navGraphFragmentActivityMain) as NavHostFragment
+        navController = navHostFragment.navController
 
         val appBarConfiguration = AppBarConfiguration(
             topLevelDestinationIds = fragmentsNavigation,
@@ -67,55 +65,133 @@ class MainActivity : AppCompatActivity() {
         topToolbar.setupWithNavController(navController, appBarConfiguration)
         bottomNavView.setupWithNavController(navController)
 
-
-        /*
-        //Configuro NavigationView
-        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
-        leftNavView.setupWithNavController(navController)
-
-
-        toggle = ActionBarDrawerToggle(
-            this, drawerLayout, topToolbar,
-            R.string.navigation_drawer_open,
-            R.string.navigation_drawer_close
-        )
-
-        navView.setNavigationItemSelectedListener { menuItem ->
-            menuItem.isChecked = true
-            drawerLayout.closeDrawers()
-            true
-        }
-
-        val btnSearch = findViewById<Button>(R.id.btnSearchFlights)
-        btnSearch.setOnClickListener {
-            findNavController().navigate(R.id.action_searchFlightFragment_to_flightListFragment)
-        }
-
-         */
-
         navController.addOnDestinationChangedListener { _, destination: NavDestination, _ ->
 
-        NavigationUI.setupWithNavController(bottomNavView, navController)
-        NavigationUI.setupWithNavController(leftNavView, navController)
+            NavigationUI.setupWithNavController(bottomNavView, navController)
+            NavigationUI.setupWithNavController(leftNavView, navController)
 
             when (destination.id) {
-                R.id.searchFlightFragment,
-                R.id.offersFragment,
-                R.id.flightListFragment,
-                R.id.settingsFragment
-                -> {
-                    bottomNavView.visibility = BottomNavigationView.VISIBLE
-                    topToolbar.visibility = MaterialToolbar.VISIBLE
-                }
-
-
-                else -> {
-                    bottomNavView.visibility = BottomNavigationView.VISIBLE
-                    topToolbar.visibility = View.GONE
-                }
+                R.id.searchFlightFragment -> configureToolbarForSearchFlight()
+                R.id.offersFragment -> configureToolbarForOffers()
+                R.id.flightListFragment -> configureToolbarForFlightList()
+                R.id.detailsFragment -> topToolbar.visibility = View.GONE
+                R.id.profileFragment -> topToolbar.visibility = View.GONE
+                else -> configureToolbarForHome()
             }
         }
     }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    private fun configureToolbarForSearchFlight() {
+        topToolbar.visibility = View.VISIBLE
+        binding.contentMainInclude.customToolbar.findViewById<View>(R.id.topToolbarTitleLogo).visibility =
+            View.GONE
+        binding.contentMainInclude.customToolbar.findViewById<View>(R.id.topToolbarTitleSearchResults).visibility =
+            View.GONE
+        binding.contentMainInclude.customToolbar.findViewById<View>(R.id.rightTopToolbarProfile).visibility =
+            View.GONE
+
+        val fragmentTitleTextView =
+            binding.contentMainInclude.customToolbar.findViewById<TextView>(R.id.topToolbarTitleText)
+        binding.contentMainInclude.customToolbar.findViewById<View>(R.id.rightTopToolbarIcon).visibility =
+            View.VISIBLE
+        binding.contentMainInclude.customToolbar.findViewById<View>(R.id.rightTopToolbarIcon).visibility =
+            View.VISIBLE
+
+        fragmentTitleTextView.visibility = View.VISIBLE
+        fragmentTitleTextView.text = "Search Flight"
+        val leftButton =
+            binding.contentMainInclude.customToolbar.findViewById<ImageView>(R.id.leftTopToolbarContent)
+
+        leftButton.setImageDrawable(resources.getDrawable(R.drawable.back_button, null))
+
+        leftButton.setOnClickListener {
+            navController.navigateUp()
+        }
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    private fun configureToolbarForFlightList() {
+        topToolbar.visibility = View.VISIBLE
+        binding.contentMainInclude.customToolbar.findViewById<View>(R.id.topToolbarTitleLogo).visibility =
+            View.GONE
+        binding.contentMainInclude.customToolbar.findViewById<View>(R.id.rightTopToolbarProfile).visibility =
+            View.GONE
+        binding.contentMainInclude.customToolbar.findViewById<View>(R.id.topToolbarTitleText).visibility =
+            View.GONE
+
+        binding.contentMainInclude.customToolbar.findViewById<View>(R.id.rightTopToolbarIcon).visibility =
+            View.VISIBLE
+        binding.contentMainInclude.customToolbar.findViewById<View>(R.id.topToolbarTitleSearchResults).visibility =
+            View.VISIBLE
+
+        val leftButton =
+            binding.contentMainInclude.customToolbar.findViewById<ImageView>(R.id.leftTopToolbarContent)
+
+        leftButton.setImageDrawable(resources.getDrawable(R.drawable.back_button, null))
+
+        leftButton.setOnClickListener {
+            navController.navigate(R.id.action_flightListFragment_to_searchFlightFragment)
+        }
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    private fun configureToolbarForOffers() {
+        topToolbar.visibility = View.VISIBLE
+        binding.contentMainInclude.customToolbar.findViewById<View>(R.id.topToolbarTitleLogo).visibility =
+            View.GONE
+        binding.contentMainInclude.customToolbar.findViewById<View>(R.id.topToolbarTitleSearchResults).visibility =
+            View.GONE
+        binding.contentMainInclude.customToolbar.findViewById<View>(R.id.rightTopToolbarProfile).visibility =
+            View.GONE
+        binding.contentMainInclude.customToolbar.findViewById<View>(R.id.rightTopToolbarIcon).visibility =
+            View.GONE
+
+        val fragmentTitleTextView =
+            binding.contentMainInclude.customToolbar.findViewById<TextView>(R.id.topToolbarTitleText)
+
+        fragmentTitleTextView.visibility = View.VISIBLE
+        fragmentTitleTextView.text = "Offers"
+        val leftButton =
+            binding.contentMainInclude.customToolbar.findViewById<ImageView>(R.id.leftTopToolbarContent)
+
+        leftButton.setImageDrawable(resources.getDrawable(R.drawable.back_button, null))
+
+        leftButton.setOnClickListener(View.OnClickListener {
+            navController.navigateUp()
+        })
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    private fun configureToolbarForHome() {
+        topToolbar.visibility = View.VISIBLE
+        binding.contentMainInclude.customToolbar.findViewById<TextView>(R.id.topToolbarTitleText).visibility =
+            View.GONE
+        binding.contentMainInclude.customToolbar.findViewById<View>(R.id.topToolbarTitleSearchResults).visibility =
+            View.GONE
+        binding.contentMainInclude.customToolbar.findViewById<View>(R.id.rightTopToolbarIcon).visibility =
+            View.GONE
+
+        binding.contentMainInclude.customToolbar.findViewById<View>(R.id.topToolbarTitleLogo).visibility =
+            View.VISIBLE
+        binding.contentMainInclude.customToolbar.findViewById<View>(R.id.rightTopToolbarProfile).visibility =
+            View.VISIBLE
+
+        val leftButton =
+            binding.contentMainInclude.customToolbar.findViewById<ImageView>(R.id.leftTopToolbarContent)
+
+        leftButton.setImageDrawable(resources.getDrawable(R.drawable.ic_hamburger_menu, null))
+
+
+        leftButton.setOnClickListener {
+            if (drawerLayout.isDrawerOpen(leftNavView)) {
+                drawerLayout.closeDrawer(leftNavView)
+            } else {
+                drawerLayout.openDrawer(leftNavView)
+            }
+        }
+    }
+
 
     /*
 
