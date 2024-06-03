@@ -5,15 +5,14 @@
     android:layout_width="264dp"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
-    android:padding="15dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="2dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:padding="15dp">
+        android:padding="13dp">
 
         <ImageView
             android:id="@+id/cardLogo"
@@ -44,7 +43,7 @@
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/offerDescription"
+                android:id="@+id/offerType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Limited time offer!"

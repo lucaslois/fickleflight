@@ -1,61 +1,52 @@
 package com.example.tp2.holders
 
-import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.tp2.R
+import com.example.tp2.databinding.ItemFlightBinding
+import com.example.tp2.ui.flightList.FlightDetailClickable
 
-class FlightHolder(v: View) : RecyclerView.ViewHolder(v) {
-    private var view: View
-
-    init {
-        this.view = v
-    }
-
+class FlightHolder(private val binding: ItemFlightBinding) : RecyclerView.ViewHolder(binding.root) {
     fun setOrigin(origin: String) {
-        val text = view.findViewById<TextView>(R.id.txtOrigin)
-        text.text = origin
+        binding.txtOrigin.text = origin
     }
 
     fun setOriginId(originId: String) {
-        val text = view.findViewById<TextView>(R.id.idOrigin)
-        text.text = originId
+        binding.idOrigin.text = originId
     }
 
     fun setDestination(destination: String) {
-        val text = view.findViewById<TextView>(R.id.txtDestination)
-        text.text = destination
+        binding.txtDestination.text = destination
     }
 
     fun setDestinationId(destinationId: String) {
-        val text = view.findViewById<TextView>(R.id.idDestination)
-        text.text = destinationId
+        binding.idDestination.text = destinationId
     }
 
     fun setDuration(duration: Int) {
-        val text = view.findViewById<TextView>(R.id.flightDuration)
-        text.text = convertMinutesToDuration(duration)
+        binding.flightDuration.text = convertMinutesToDuration(duration)
     }
 
-    fun setAirplaneLogo(imageUrl: String){
-        val imageView: ImageView = view.findViewById(R.id.airplaneLogo)
-        Glide.with(view.context)
+    fun setAirplaneLogo(imageUrl: String) {
+        Glide.with(binding.root)
             .load(imageUrl)
             .fitCenter()
-            .into(imageView)
+            .into(binding.airplaneLogo)
     }
 
     fun setTravelClass(travClass: String) {
-        val text = view.findViewById<TextView>(R.id.travelClass)
-        text.text = travClass
+        binding.travelClassText.text = travClass
     }
 
     fun setFromPrice(price: String) {
-        val text = view.findViewById<TextView>(R.id.fromPrice)
-        "$$price".also { text.text = it }
+        binding.fromPrice.text = "$$price"
     }
+
+    fun setOnFlightDetailClickable(flightDetailClickable: FlightDetailClickable, flightId: String) {
+        binding.buttonViewDetails.setOnClickListener {
+            flightDetailClickable.onClickFlightDetail(flightId)
+        }
+    }
+
     private fun convertMinutesToDuration(minutes: Int): String {
         val hours = minutes / 60
         val remainingMinutes = minutes % 60

@@ -1,49 +1,31 @@
 package com.example.tp2.ui.searchFlight
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.lifecycle.lifecycleScope
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tp2.R
 import com.example.tp2.adapters.OfferListAdapter
-import com.example.tp2.adapters.TrendingDestinationListAdapter
-import com.example.tp2.data.network.flights.FlightService
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import com.example.tp2.ui.details.OffersViewModel
 
 class SearchFlightFragment : Fragment() {
     private lateinit var adapter: OfferListAdapter
+    private val viewModel: OffersViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         adapter = OfferListAdapter(requireContext(), mutableListOf())
-
-
-        val flightsService = FlightService()
-
-        lifecycleScope.launch {
-            try {
-                val response = withContext(Dispatchers.IO) {
-                    flightsService.getActiveOffers()
-                }
-                response.data?.let { data ->
-                    withContext(Dispatchers.Main) {
-                        adapter.updateOffers(data.toMutableList())
-                    }
-                }
-            } catch (e: Exception) {
-                Log.e("FlightService", "Error fetching offers: ${e.message}", e)
-            }
+        viewModel.getActiveOffers()
+        viewModel.activeOffers.observe(
+            this,
+        ) {
+            adapter.updateOffers(it)
         }
     }
 

@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
@@ -14,9 +15,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.tp2.R
 import com.example.tp2.adapters.TrendingDestinationListAdapter
 import com.example.tp2.data.network.flights.FlightService
-import com.example.tp2.data.network.flights.TrendingDestinationsApiClient
-import com.example.tp2.data.network.flights.models.TrendingDestination
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -31,7 +29,6 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         adapter = TrendingDestinationListAdapter(requireContext(), mutableListOf())
-
 
         val flightsService = FlightService()
 
@@ -67,6 +64,11 @@ class HomeFragment : Fragment() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+        val profileButton = view.findViewById<ImageView>(R.id.profile_image)
+        profileButton.setOnClickListener {
+
+        }
 
         return view
     }

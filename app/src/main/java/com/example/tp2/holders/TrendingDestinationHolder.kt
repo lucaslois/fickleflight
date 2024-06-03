@@ -4,7 +4,6 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.tp2.R
 
 class TrendingDestinationHolder(v: View) : RecyclerView.ViewHolder(v) {
@@ -26,7 +25,7 @@ class TrendingDestinationHolder(v: View) : RecyclerView.ViewHolder(v) {
 
     fun setDuration(duration: String) {
         val text = view.findViewById<TextView>(R.id.txtDestinationDuration)
-        "$duration hours".also { text.text = it }
+        text.text = duration
     }
 
     fun imageView(): ImageView {

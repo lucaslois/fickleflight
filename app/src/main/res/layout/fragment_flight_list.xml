@@ -3,19 +3,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.flightList.FlightListFragment"
     android:layout_gravity="center_horizontal"
-    >
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="20dp"
+    tools:context=".ui.flightList.FlightListFragment">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/materialToolbar"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/flightResult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        android:weightSum="2"
         app:layout_constraintTop_toTopOf="parent">
 
-    </com.google.android.material.appbar.MaterialToolbar>
+        <TextView
+            android:id="@+id/flightResultsTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:text="Performing a search..."
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/flightResultsFilterLogo"
+            android:layout_width="16dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="4dp"
+            android:contentDescription="TODO"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_flight_filter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/flightListRecyclerView"
@@ -24,6 +47,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/flightResult" />
+
+    <include
+        android:id="@+id/loader"
+        layout="@layout/frame_loader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/flightListRecyclerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flightResult" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
