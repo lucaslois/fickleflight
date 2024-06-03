@@ -1,5 +1,6 @@
 package com.example.tp2.ui.offers
 
+import OfferListAdapter
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,7 +11,7 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tp2.adapters.OfferListAdapter
+
 import com.example.tp2.data.network.flights.FlightService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,7 +25,7 @@ class OffersFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        adapter = OfferListAdapter(requireContext(), mutableListOf())
+        adapter = OfferListAdapter(requireContext(), mutableListOf(), OfferListAdapter.VIEW_TYPE_OFFER_DETAIL)
 
         val offersDetails = FlightService()
 
@@ -64,3 +65,4 @@ class OffersFragment : Fragment() {
         return view
     }
 }
+

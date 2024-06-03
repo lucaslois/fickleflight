@@ -1,32 +1,60 @@
-package com.example.tp2.adapters
-
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tp2.R
+import com.bumptech.glide.Glide
 import com.example.tp2.data.network.flights.models.Offer
-import com.example.tp2.databinding.ItemFlightBinding
+
 import com.example.tp2.databinding.ItemOfferBinding
+import com.example.tp2.databinding.ItemOfferDetailBinding
 import com.example.tp2.holders.OfferHolder
 
 class OfferListAdapter(
     private val context: Context,
-    private val offerList: MutableList<Offer>
-) : RecyclerView.Adapter<OfferHolder>() {
+    private val offerList: MutableList<Offer>,
+    private val viewType: Int // Agrega este parámetro
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-
-    override fun onBindViewHolder(holder: OfferHolder, position: Int) {
-        val offer = offerList[position]
-        holder.setDiscount(offer.discount_desc_short)
-        holder.setOfferType(offer.offer_type_desc)
-        holder.setCardImage(offer.image_url)
+    companion object {
+        const val VIEW_TYPE_OFFER = 0
+        const val VIEW_TYPE_OFFER_DETAIL = 1
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OfferHolder {
-        val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemOfferBinding.inflate(inflater, parent, false)
-        return OfferHolder(binding)
+    override fun getItemViewType(position: Int): Int {
+        // Utiliza el parámetro viewType pasado en el constructor
+        return viewType
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return when (viewType) {
+            VIEW_TYPE_OFFER -> {
+                val inflater = LayoutInflater.from(parent.context)
+                val binding = ItemOfferBinding.inflate(inflater, parent, false)
+                OfferHolder(binding)
+            }
+            VIEW_TYPE_OFFER_DETAIL -> {
+                val inflater = LayoutInflater.from(parent.context)
+                val binding = ItemOfferDetailBinding.inflate(inflater, parent, false)
+                OfferDetailHolder(binding)
+            }
+            else -> throw IllegalArgumentException("Invalid view type")
+        }
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val offer = offerList[position]
+        when (holder) {
+            is OfferHolder -> {
+                holder.setDiscount(offer.discount_desc_short)
+                holder.setOfferType(offer.offer_type_desc)
+                holder.setCardImage(offer.image_url)
+            }
+            is OfferDetailHolder -> {
+                holder.setDiscountDetail(offer.discount_desc_long)
+
+                holder.setCardImageDetail(offer.image_url)
+            }
+        }
     }
 
     override fun getItemCount(): Int = offerList.size
@@ -36,4 +64,38 @@ class OfferListAdapter(
         offerList.addAll(offers)
         notifyDataSetChanged()
     }
+
+    inner class OfferHolder(private val binding: ItemOfferBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun setDiscount(discount: String) {
+            binding.offerTitle.text = discount
+        }
+
+        fun setOfferType(offerType: String) {
+            binding.offerType.text = offerType
+        }
+
+        fun setCardImage(imageUrl: String){
+            Glide.with(binding.root)
+                .load(imageUrl)
+                .fitCenter()
+                .into(binding.cardLogo)
+        }
+    }
+
+    inner class OfferDetailHolder(private val binding: ItemOfferDetailBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun setDiscountDetail(discount: String) {
+            binding.offerTypeDetail.text = discount
+        }
+
+
+
+        fun setCardImageDetail(imageUrl: String){
+            Glide.with(binding.root)
+                .load(imageUrl)
+                .fitCenter()
+                .into(binding.cardLogoDetail)
+        }
+    }
 }
+
+
