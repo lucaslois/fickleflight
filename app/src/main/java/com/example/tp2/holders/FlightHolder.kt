@@ -1,13 +1,7 @@
 package com.example.tp2.holders
 
-import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.tp2.R
 import com.example.tp2.databinding.ItemFlightBinding
 import com.example.tp2.ui.flightList.FlightDetailClickable
 
@@ -40,7 +34,7 @@ class FlightHolder(private val binding: ItemFlightBinding) : RecyclerView.ViewHo
     }
 
     fun setTravelClass(travClass: String) {
-        binding.travelClass.text = travClass
+        binding.travelClassText.text = travClass
     }
 
     fun setFromPrice(price: String) {
@@ -50,9 +44,7 @@ class FlightHolder(private val binding: ItemFlightBinding) : RecyclerView.ViewHo
     fun setOnFlightDetailClickable(flightDetailClickable: FlightDetailClickable, flightId: String) {
         binding.buttonViewDetails.setOnClickListener {
             flightDetailClickable.onClickFlightDetail(flightId)
-
         }
-
     }
 
     private fun convertMinutesToDuration(minutes: Int): String {
