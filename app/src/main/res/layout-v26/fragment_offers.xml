@@ -31,6 +31,39 @@
                 android:src="@drawable/ic_back"
                 app:contentPadding="8dp"
                 app:shapeAppearanceOverlay="@style/CircleImage" />
++
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            +
 
             <TextView
                 android:id="@+id/textView2"
