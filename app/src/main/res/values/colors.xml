@@ -13,6 +13,7 @@
     <color name="background_home">#F8F9FB</color>
     <color name="background_airplane">#5443CB</color>
     <color name="flight_text">#191919</color>
+    <color name="discount_text_detail">#7E8B97</color>
     <color name="bottom_bar_inactive">#7E8B97</color>
     <color name="buttonPrimary">#F99A0E</color>
     <color name="separator">#E6E9F0</color>
