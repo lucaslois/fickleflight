@@ -4,6 +4,7 @@
     android:id="@+id/logoToolbar"
     android:layout_width="match_parent"
     android:layout_height="68dp"
+    android:background="@color/colorPrimary"
     >
 
     <com.google.android.material.imageview.ShapeableImageView

@@ -23,7 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@string/text_content"
-        android:textColor="@android:color/black"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/flight_text"
         android:textSize="16sp" />
 
     <TextView
