@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -16,8 +15,8 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/destinationImage"
-                android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:layout_width="393dp"
+                android:layout_height="198dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/paris"
                 app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +29,7 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:contentDescription="TODO"
+                android:contentDescription="@string/todo"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_heart"
                 app:layout_constraintEnd_toEndOf="parent"

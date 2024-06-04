@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tp2.R
+import com.example.tp2.adapters.OfferListAdapter
 import com.example.tp2.adapters.TrendingDestinationListAdapter
 import com.example.tp2.data.network.flights.FlightService
 import kotlinx.coroutines.Dispatchers
@@ -23,11 +24,14 @@ import kotlinx.coroutines.withContext
  */
 class HomeFragment : Fragment() {
     private lateinit var adapter: TrendingDestinationListAdapter
+    private lateinit var adapterHome: OfferListAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         adapter = TrendingDestinationListAdapter(requireContext(), mutableListOf())
+        adapterHome = OfferListAdapter(requireContext(), mutableListOf(), OfferListAdapter.VIEW_TYPE_OFFER_HOME)
 
         val flightsService = FlightService()
+        val offersHome = FlightService()
 
         lifecycleScope.launch {
             try {
@@ -39,8 +43,17 @@ class HomeFragment : Fragment() {
                         adapter.updateTrendingDestinations(data.toMutableList())
                     }
                 }
+
+                val responseOffers = withContext(Dispatchers.IO) {
+                    offersHome.getActiveOffers()
+                }
+                responseOffers.data.let { data ->
+                    withContext(Dispatchers.Main) {
+                        adapterHome.updateOffers(data.toMutableList())
+                    }
+                }
             } catch (e: Exception) {
-                Log.e("FlightService", "Error fetching trending destinations: ${e.message}", e)
+                Log.e("FlightService", "Error fetching information: ${e.message}", e)
             }
         }
     }
@@ -57,9 +70,14 @@ class HomeFragment : Fragment() {
         //(activity as? AppCompatActivity)?.supportActionBar?.title = ""
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.trendingDestinationsRecyclerView)
+        val recyclerViewOffersHome = view.findViewById<RecyclerView>(R.id.offersHomeRecyclerView)
 
         recyclerView.adapter = adapter
         recyclerView.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+        recyclerViewOffersHome.adapter = adapterHome
+        recyclerViewOffersHome.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
         //val profileButton = view.findViewById<ImageView>(R.id.profile_image)

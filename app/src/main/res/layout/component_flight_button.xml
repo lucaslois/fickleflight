@@ -6,8 +6,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/flightIconBackground"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
@@ -15,12 +15,11 @@
         android:background="@color/background_airplane"
         android:padding="10dp"
         app:shapeAppearanceOverlay="@style/RoundedCorners" />
-    >
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/flightIcon"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
@@ -35,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/flightIcon"
         android:layout_centerHorizontal="true"
-        android:text="Flight"
+        android:text="@string/flight"
         android:textSize="18sp" />
 
 </RelativeLayout>
