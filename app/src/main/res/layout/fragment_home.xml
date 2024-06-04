@@ -41,14 +41,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/inter_bold"
-                android:text="Trending Destinations"
+
+                android:text="@string/trending_destinations"
                 android:textColor="@color/flight_text"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
+
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/trendingDestinationsRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_width="385dp"
+                android:layout_height="155dp" />
+
+            <TextView
+                android:id="@+id/offerTitle"
+                android:layout_width="393dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/offers"
+                android:textColor="#191919"
+                android:textSize="16sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/offersHomeRecyclerView"
+                android:layout_width="389dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"/>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
