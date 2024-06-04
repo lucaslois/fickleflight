@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="311dp"
         android:layout_height="match_parent"
-
+android:background="@color/top_navbar"
         android:orientation="horizontal"
         android:padding="13dp">
 
@@ -59,7 +59,7 @@
             android:layout_marginTop="80dp"
             android:layout_marginEnd="51dp"
             android:text="50% discount for VIP users"
-            android:textColor="@color/black"
+            android:textColor="@color/flight_text"
             android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.342"

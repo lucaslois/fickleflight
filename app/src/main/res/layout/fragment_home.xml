@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/inter_bold"
                 android:text="Trending Destinations"
-                android:textColor="#191919"
+                android:textColor="@color/flight_text"
                 android:textSize="16dp" />
 
             <androidx.recyclerview.widget.RecyclerView
