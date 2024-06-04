@@ -7,6 +7,7 @@ data class Offer(
     val card_types: List<String>,
     val discount_desc_short: String,
     val discount_desc_long: String,
+    val tittle_discuount: String,
     val discount_percentage: String,
     val image_url: String
 )
