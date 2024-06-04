@@ -16,6 +16,8 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.example.tp2.R
 import com.example.tp2.databinding.ActivityMainBinding
+import com.example.tp2.ui.home.HomeFragment
+import com.example.tp2.ui.searchFlight.SearchFlightFragmentDirections
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
@@ -39,7 +41,6 @@ class MainActivity : AppCompatActivity() {
         R.id.flightListFragment,
         R.id.settingsFragment
     )
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -106,7 +107,8 @@ class MainActivity : AppCompatActivity() {
         leftButton.setImageDrawable(resources.getDrawable(R.drawable.back_button, null))
 
         leftButton.setOnClickListener {
-            navController.navigateUp()
+            val action = SearchFlightFragmentDirections.actionSearchFlightFragmentToHomeFragment()
+            navController.navigate(action)
         }
     }
 

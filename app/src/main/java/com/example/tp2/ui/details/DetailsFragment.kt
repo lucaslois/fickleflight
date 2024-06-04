@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tp2.adapters.ImageDetailAdapter
@@ -30,6 +31,10 @@ class DetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentDetailsBinding.inflate(inflater, container, false)
+
+        binding.backButtonDetails.setOnClickListener {
+            findNavController().navigateUp()
+        }
 
         setupRecyclerView()
         observeFlightDetails()
