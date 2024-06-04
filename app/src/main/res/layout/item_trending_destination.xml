@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="4dp"
     android:layout_marginEnd="4dp"
-    android:background="#FFFFFF"
     android:orientation="vertical"
     android:padding="12dp"
     app:cardCornerRadius="8dp"
@@ -15,7 +14,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        android:background="@color/top_navbar"
         android:orientation="vertical"
         android:padding="12dp">
 
@@ -44,7 +43,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter_bold"
                     android:text="TextView"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/flight_text" />
 
                 <TextView
                     android:id="@+id/txtDestinationCountry"
