@@ -37,4 +37,12 @@
     <string name="flight">Flight</string>
     <string name="trending_destinations">Trending Destinations</string>
     <string name="text_discount">50% discount for VIP users</string>
+    <string name="oneWayText">One Way</string>
+    <string name="roundTrip">Round trip</string>
+    <string name="formDepartureText">From</string>
+    <string name="formArrivalText">To</string>
+    <string name="formDepartureDateText">Departure Date</string>
+    <string name="formPassengersText">Passengers</string>
+    <string name="formClassText">Class</string>
+    <string name="searchFlightButton">Search</string>
 </resources>

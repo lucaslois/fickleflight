@@ -36,9 +36,9 @@
                     style="@style/CustomSelectedButton"
                     android:layout_width="0dp"
                     android:layout_height="60dp"
-                    android:layout_marginLeft="6dp"
+                    android:layout_marginStart="6dp"
                     android:layout_weight="1"
-                    android:text="One Way"
+                    android:text="@string/oneWayText"
                     android:textAlignment="center" />
 
                 <com.google.android.material.chip.Chip
@@ -46,9 +46,9 @@
                     style="@style/CustomUnselectedButton"
                     android:layout_width="0dp"
                     android:layout_height="60dp"
-                    android:layout_marginRight="6dp"
+                    android:layout_marginEnd="6dp"
                     android:layout_weight="1"
-                    android:text="Round trip"
+                    android:text="@string/roundTrip"
                     android:textAlignment="center" />
 
             </LinearLayout>
@@ -66,7 +66,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="From"
+                android:hint="@string/formDepartureText"
                 app:startIconDrawable="@drawable/ic_airplane_takeoff">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -81,7 +81,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="To"
+                android:hint="@string/formArrivalText"
                 app:startIconDrawable="@drawable/ic_airplane_landing">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -97,7 +97,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Departure Date"
+                android:hint="@string/formDepartureDateText"
                 app:startIconDrawable="@drawable/ic_calendar">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -121,7 +121,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
-                    android:hint="Passengers"
+                    android:hint="@string/formPassengersText"
                     app:startIconDrawable="@drawable/ic_people">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -139,7 +139,7 @@
                     android:layout_margin="2dp"
 
                     android:layout_weight="1"
-                    android:hint="Class"
+                    android:hint="@string/formClassText"
                     app:startIconDrawable="@drawable/ic_like">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -163,7 +163,7 @@
                 android:fontFamily="@font/inter_bold"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:text="Search" />
+                android:text="@string/searchFlightButton" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
