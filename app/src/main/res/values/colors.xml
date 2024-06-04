@@ -39,6 +39,7 @@
 
     <color name="badgeBackground">#F4F5F6</color>
     <color name="badgeText">#4D5760</color>
+    <color name="grey">#7E8B97</color>
 
 
 </resources>
