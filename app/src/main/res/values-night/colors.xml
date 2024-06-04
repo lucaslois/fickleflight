@@ -3,6 +3,7 @@
     <!-- Primary Colors -->
     <color name="colorPrimary">#001253</color>
     <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorSecondaryDark">#7E8B97</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
@@ -16,10 +17,11 @@
     <color name="buttonPrimary">#F99A0E</color>
     <color name="separator">#E6E9F0</color>
     <color name="settings_background">#000000</color>
-    <color name="settings_icon_background">#F1F7FD</color>
+    <color name="settings_icon_background">#001253</color>
     <color name="new_setting">#32D4AD</color>
     <color name="settings_title">#91CBFF</color>
     <color name="option_title">#FFFFFF</color>
+    <color name="form_icon">#555555</color>
 
     <!-- Custom Switch Colors -->
     <color name="custom_color_switch_thumb_inactive">#74777F</color>

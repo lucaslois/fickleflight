@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/top_navbar">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -17,8 +18,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_vertical">
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/depeartureAirportText"
@@ -27,7 +28,7 @@
                 android:layout_gravity="start"
                 android:fontFamily="@font/inter_bold"
                 android:text="@string/depeartureAirportString"
-                android:textColor="@color/black"
+                android:textColor="@color/flight_text"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +40,6 @@
                 android:layout_height="18dp"
                 android:layout_gravity="center"
                 android:contentDescription="@string/app_name"
-
                 android:src="@drawable/ic_arrow"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -53,7 +53,7 @@
                 android:layout_gravity="end"
                 android:fontFamily="@font/inter_bold"
                 android:text="@string/arrivalAirportString"
-                android:textColor="@color/black"
+                android:textColor="@color/flight_text"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -67,7 +67,7 @@
             android:fontFamily="@font/inter_regular"
             android:text="@string/depeartureDateString"
             android:textColor="@color/font_light_grey"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
     </LinearLayout>
 
 

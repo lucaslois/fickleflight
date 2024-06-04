@@ -4,15 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_light_grey"
-    >
+    android:background="@color/background_home">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/fragmentSearchFlight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
-        android:background="@color/background_light_grey"
         tools:context=".ui.searchFlight.SearchFlightFragment">
 
 
@@ -58,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/inter_bold"
                 android:text="@string/offers"
-                android:textColor="#191919"
+                android:textColor="@color/flight_text"
                 android:textSize="16sp" />
 
             <androidx.recyclerview.widget.RecyclerView

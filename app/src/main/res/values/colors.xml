@@ -24,6 +24,7 @@
     <color name="background_light_grey">#F3F5F9</color>
     <color name="settings_title">#1B72C0</color>
     <color name="option_title">#001E2F</color>
+    <color name="form_icon">#555555</color>
 
     <!-- Custom Switch Colors -->
     <color name="custom_color_switch_thumb_inactive">#74777F</color>
@@ -38,6 +39,7 @@
 
     <color name="badgeBackground">#F4F5F6</color>
     <color name="badgeText">#4D5760</color>
+    <color name="grey">#7E8B97</color>
 
 
 </resources>
