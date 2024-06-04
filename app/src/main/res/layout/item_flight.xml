@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@color/top_navbar"
         android:padding="12dp">
 
         <LinearLayout
@@ -111,7 +112,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Ezeiza International Airport"
-                    android:textColor="#191919" />
+                    android:textColor="@color/flight_text" />
 
             </LinearLayout>
 
@@ -230,7 +231,7 @@
                         android:fontFamily="@font/inter_bold"
                         android:gravity="end"
                         android:text="$1128"
-                        android:textColor="@color/black"
+                        android:textColor="@color/flight_text"
                         android:textSize="16sp" />
 
                 </LinearLayout>

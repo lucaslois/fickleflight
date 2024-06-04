@@ -69,7 +69,8 @@
             android:background="@drawable/border"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            >
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guidelineEnd"
@@ -178,7 +179,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter_bold"
                     android:text="Photos"
-                    android:textColor="#191919"
+                    android:textColor="@color/flight_text"
                     android:textSize="16dp" />
 
                 <androidx.recyclerview.widget.RecyclerView

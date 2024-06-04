@@ -6,13 +6,15 @@
     android:layout_gravity="center_horizontal"
     android:paddingHorizontal="16dp"
     android:paddingVertical="20dp"
-    tools:context=".ui.flightList.FlightListFragment">
+    tools:context=".ui.flightList.FlightListFragment"
+    android:background="@color/colorPrimary">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/flightResult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/top_navbar"
         android:weightSum="2"
         app:layout_constraintTop_toTopOf="parent">
 
