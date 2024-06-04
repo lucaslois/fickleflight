@@ -35,4 +35,5 @@
     <string name="todo">TODO</string>
     <string name="flight">Flight</string>
     <string name="trending_destinations">Trending Destinations</string>
+    <string name="text_discount">50% discount for VIP users</string>
 </resources>
