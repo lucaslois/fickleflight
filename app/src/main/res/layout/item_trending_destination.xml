@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card"
-    android:layout_width="180dp"
+    android:layout_width="160dp"
     android:layout_height="wrap_content"
     android:layout_marginStart="4dp"
     android:layout_marginEnd="4dp"
@@ -13,18 +13,19 @@
     app:cardElevation="2dp">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="162dp"
+        android:layout_height="match_parent"
         android:background="#FFFFFF"
         android:orientation="vertical"
         android:padding="12dp">
 
         <ImageView
             android:id="@+id/imgDestination"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_width="138dp"
+            android:layout_height="72dp"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/paris" />
+            app:srcCompat="@drawable/paris"
+            android:contentDescription="@string/todo"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,22 +44,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/inter_bold"
-                    android:text="TextView"
                     android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/txtDestinationCountry"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_height="wrap_content" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/txtDestinationDuration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView" />
+                android:layout_weight="1" />
         </LinearLayout>
     </LinearLayout>
 

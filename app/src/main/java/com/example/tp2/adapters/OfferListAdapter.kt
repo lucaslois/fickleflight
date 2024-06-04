@@ -19,6 +19,7 @@ class OfferListAdapter(
     companion object {
         const val VIEW_TYPE_OFFER = 0
         const val VIEW_TYPE_OFFER_DETAIL = 1
+        const val VIEW_TYPE_OFFER_HOME = 2
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -36,6 +37,11 @@ class OfferListAdapter(
                 val inflater = LayoutInflater.from(parent.context)
                 val binding = ItemOfferDetailBinding.inflate(inflater, parent, false)
                 OfferDetailHolder(binding)
+            }
+            VIEW_TYPE_OFFER_HOME -> {
+                val inflater = LayoutInflater.from(parent.context)
+                val binding = ItemOfferBinding.inflate(inflater, parent, false)
+                OfferHolder(binding)
             }
             else -> throw IllegalArgumentException("Invalid view type")
         }
