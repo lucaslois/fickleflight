@@ -51,6 +51,7 @@ class OfferListAdapter(
             }
             is OfferDetailHolder -> {
                 holder.setDiscountDetail(offer.discount_desc_long)
+                holder.setTitleDetail(offer.tittle_discuount)
                 holder.setCardImageDetail(offer.image_url)
             }
         }

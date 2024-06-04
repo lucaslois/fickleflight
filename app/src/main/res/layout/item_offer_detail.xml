@@ -2,14 +2,17 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="311dp"
+    android:layout_width="362dp"
     android:layout_height="168dp"
-    android:layout_margin="25dp"
+
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="10dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="2dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="311dp"
+        android:layout_width="362dp"
         android:layout_height="match_parent"
 android:background="@color/top_navbar"
         android:orientation="horizontal"
@@ -18,16 +21,28 @@ android:background="@color/top_navbar"
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/editButton"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="33dp"
+            android:layout_height="31dp"
 
-            android:layout_marginStart="136dp"
-
-            android:layout_marginBottom="48dp"
+            android:layout_marginBottom="57dp"
             android:src="@drawable/ic_heart_2"
             app:contentPadding="5dp"
             app:layout_constraintBottom_toTopOf="@+id/offerTypeDetail"
-            app:layout_constraintStart_toEndOf="@+id/imageView5" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.984"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/offerTitleDetail"
+            android:layout_width="262dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="33dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageView5"
@@ -55,16 +70,23 @@ android:background="@color/top_navbar"
             android:id="@+id/offerTypeDetail"
             android:layout_width="169dp"
             android:layout_height="56dp"
-            android:layout_marginStart="47dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginEnd="51dp"
+            android:layout_marginTop="88dp"
+            android:layout_marginEnd="20dp"
             android:text="50% discount for VIP users"
             android:textColor="@color/flight_text"
             android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.342"
-            app:layout_constraintStart_toEndOf="@+id/cardLogoDetail"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+
+            android:layout_width="27dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="64dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editButton"
+            app:srcCompat="@drawable/ic_arrow_back" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
