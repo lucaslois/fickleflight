@@ -150,7 +150,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="end"
                     android:text="George Bush Intercontinental Airport"
-                    android:textColor="#191919" />
+                    android:textColor="@color/flight_text" />
 
             </LinearLayout>
         </LinearLayout>
