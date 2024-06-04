@@ -1,6 +1,6 @@
 package com.example.tp2.ui.offers
 
-import OfferListAdapter
+
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -17,6 +17,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import com.example.tp2.R
+import com.example.tp2.adapters.OfferListAdapter
 
 class OffersFragment : Fragment() {
 

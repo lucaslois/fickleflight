@@ -1,18 +1,19 @@
+package com.example.tp2.adapters
+
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.tp2.data.network.flights.models.Offer
-
 import com.example.tp2.databinding.ItemOfferBinding
 import com.example.tp2.databinding.ItemOfferDetailBinding
 import com.example.tp2.holders.OfferHolder
+import com.example.tp2.holders.OfferDetailHolder
 
 class OfferListAdapter(
     private val context: Context,
     private val offerList: MutableList<Offer>,
-    private val viewType: Int // Agrega este parámetro
+    private val viewType: Int
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
@@ -21,7 +22,6 @@ class OfferListAdapter(
     }
 
     override fun getItemViewType(position: Int): Int {
-        // Utiliza el parámetro viewType pasado en el constructor
         return viewType
     }
 
@@ -51,7 +51,6 @@ class OfferListAdapter(
             }
             is OfferDetailHolder -> {
                 holder.setDiscountDetail(offer.discount_desc_long)
-
                 holder.setCardImageDetail(offer.image_url)
             }
         }
@@ -64,38 +63,4 @@ class OfferListAdapter(
         offerList.addAll(offers)
         notifyDataSetChanged()
     }
-
-    inner class OfferHolder(private val binding: ItemOfferBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun setDiscount(discount: String) {
-            binding.offerTitle.text = discount
-        }
-
-        fun setOfferType(offerType: String) {
-            binding.offerType.text = offerType
-        }
-
-        fun setCardImage(imageUrl: String){
-            Glide.with(binding.root)
-                .load(imageUrl)
-                .fitCenter()
-                .into(binding.cardLogo)
-        }
-    }
-
-    inner class OfferDetailHolder(private val binding: ItemOfferDetailBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun setDiscountDetail(discount: String) {
-            binding.offerTypeDetail.text = discount
-        }
-
-
-
-        fun setCardImageDetail(imageUrl: String){
-            Glide.with(binding.root)
-                .load(imageUrl)
-                .fitCenter()
-                .into(binding.cardLogoDetail)
-        }
-    }
 }
-
-
