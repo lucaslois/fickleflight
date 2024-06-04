@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="311dp"
+    android:layout_height="168dp"
+    android:layout_margin="25dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="311dp"
+        android:layout_height="match_parent"
+
+        android:orientation="horizontal"
+        android:padding="13dp">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/editButton"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+
+            android:layout_marginStart="136dp"
+
+            android:layout_marginBottom="48dp"
+            android:src="@drawable/ic_heart_2"
+            app:contentPadding="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/offerTypeDetail"
+            app:layout_constraintStart_toEndOf="@+id/imageView5" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="108dp"
+            android:layout_height="30dp"
+
+            android:src="@drawable/ic_limited_offer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/cardLogoDetail"
+            android:layout_width="74dp"
+            android:layout_height="51dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.967" />
+
+        <TextView
+            android:id="@+id/offerTypeDetail"
+            android:layout_width="169dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="47dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="51dp"
+            android:text="50% discount for VIP users"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.342"
+            app:layout_constraintStart_toEndOf="@+id/cardLogoDetail"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

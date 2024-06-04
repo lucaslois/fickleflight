@@ -1,5 +1,6 @@
 package com.example.tp2.ui.searchFlight
 
+import OfferListAdapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tp2.R
-import com.example.tp2.adapters.OfferListAdapter
+
 import com.example.tp2.ui.details.OffersViewModel
 
 class SearchFlightFragment : Fragment() {
@@ -20,7 +21,7 @@ class SearchFlightFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        adapter = OfferListAdapter(requireContext(), mutableListOf())
+        adapter = OfferListAdapter(requireContext(), mutableListOf(), OfferListAdapter.VIEW_TYPE_OFFER)
         viewModel.getActiveOffers()
         viewModel.activeOffers.observe(
             this,
@@ -33,18 +34,17 @@ class SearchFlightFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_search_flight, container, false);
+        val view = inflater.inflate(R.layout.fragment_search_flight, container, false)
         val recyclerView = view.findViewById<RecyclerView>(R.id.offersRecyclerView)
 
         recyclerView.adapter = adapter
-        recyclerView.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
         val btnSearch = view.findViewById<Button>(R.id.btnSearchFlights)
         btnSearch.setOnClickListener {
             findNavController().navigate(R.id.action_searchFlightFragment_to_flightListFragment)
         }
 
-        return view;
+        return view
     }
 }
