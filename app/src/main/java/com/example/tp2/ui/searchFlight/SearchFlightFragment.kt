@@ -1,6 +1,6 @@
 package com.example.tp2.ui.searchFlight
 
-import OfferListAdapter
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tp2.R
+import com.example.tp2.adapters.OfferListAdapter
 
 import com.example.tp2.ui.details.OffersViewModel
 
